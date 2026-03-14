@@ -78,17 +78,13 @@
     $(".nav > ul > li > a").on("click", function (event) {
       var $dropdown = $(this).next(".dropdown");
       var $nav = $(this).closest(".nav");
-      event.preventDefault();
 
-      if ($dropdown.length && $nav.hasClass("is-visible")) {
-        $dropdown.animate({ height: "toggle", opacity: 1 }, 500);
-      }
-    });
-
-    $(".nav > ul > li > a").on("click", function (event) {
-      var $dropdown = $(this).next(".dropdown");
       if ($dropdown.length) {
         event.preventDefault();
+
+        if ($dropdown.length && $nav.hasClass("is-visible")) {
+          $dropdown.animate({ height: "toggle", opacity: 1 }, 500);
+        }
       }
     });
   });
